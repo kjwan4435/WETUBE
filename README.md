@@ -2,15 +2,15 @@
 
 Clone coding of YOUTUBE with Vanilla and Node JS
 
-
+```
 npm init // package.json 파일 생성
 npm install express // express 설치
 
 // babelrc는 최신버전(ES6)의 javascript를 구 브라우저에서 인식할 수 있도록 옛날 버전으로 바꿔주는 역할. 
 npm install @babel/node // babel 설치
 npm install @babel/preset-env // env 설치 (최신이지만 그렇게 실험적이진 않음)
-
-npm install nodemon -D // nodemon과 같은 프로젝트에 영향은 주지 않지만 개발자에게 필요한 모듈 설치 시 -D
+npm install nodemon -D // js의 수정 감지 nodemon과 같은 프로젝트에 영향은 주지 않지만 개발자에게 필요한 모듈 설치 시 -D
+npm install pug // HTML을 멋지게 보이게 만들어줌 
 
 app.use(betweenHome);
 app.get("/", betweenHome, handleHome);
@@ -35,3 +35,15 @@ function handleHome(req,res){
     // res를 통해서 서버에 응답을 보낸다.
     // 나중에 포스트를 할 때나 req를 통해서 전송한다.
 }
+
+export default는 파일을 통째로 export시킨다.
+export는 변수별로 export시킨다.
+
+=> : 암시적으로 return.
+
+ #{new Date().getFullYear() } : pug에서 자바스크립트 호출할 때 이렇게 쓰면 된다.
+
+ locals에 로컬 변수를 저장하면, 이 변수들을 템플릿에서 사용 가능하다.
+
+ res.render("템플릿","템플릿에 넘길 정보")
+ ```
