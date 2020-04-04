@@ -2,8 +2,8 @@ extends layouts/main
 
 block content
     .form-container
-        form(action=routes.upload, method="post")
-            input(type="text", placeholder="Title", name="title")
-            textarea(placeholder="Description", name="description")
+        form(action=routes.editVideo(video.id), method="post")
+            input(type="text", placeholder="Title", value=video.title, name="title")
+            textarea(placeholder="Description", name="description")=video.description
             input(type="submit", value="update video")
-        a.form-container__link(href=`/videos${routes.deleteVideo}`) Delete Video
+        a.form-container__link(href=routes.deleteVideo(video.id)) Delete Video
