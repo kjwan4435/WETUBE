@@ -11,6 +11,7 @@ npm install @babel/node // babel 설치
 npm install @babel/preset-env // env 설치 (최신이지만 그렇게 실험적이진 않음)
 npm install nodemon -D // js의 수정 감지 nodemon과 같은 프로젝트에 영향은 주지 않지만 개발자에게 필요한 모듈 설치 시 -D
 npm install pug // HTML을 멋지게 보이게 만들어줌 
+npm install dotenv // 보안용 내 URL에서 user의 데이터를 숨길 때 사용
 
 app.use(betweenHome);
 app.get("/", betweenHome, handleHome);
@@ -46,4 +47,6 @@ export는 변수별로 export시킨다.
  locals에 로컬 변수를 저장하면, 이 변수들을 템플릿에서 사용 가능하다.
 
  res.render("템플릿","템플릿에 넘길 정보")
+
+ Async: JS야, 어떤 부분은 꼭 기다렸다가 실행해야 해.
  ```
