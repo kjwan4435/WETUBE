@@ -12,6 +12,7 @@ npm install @babel/preset-env // env 설치 (최신이지만 그렇게 실험적
 npm install nodemon -D // js의 수정 감지 nodemon과 같은 프로젝트에 영향은 주지 않지만 개발자에게 필요한 모듈 설치 시 -D
 npm install pug // HTML을 멋지게 보이게 만들어줌 
 npm install dotenv // 보안용 내 URL에서 user의 데이터를 숨길 때 사용
+npm install multer // file을 업로드하면 url을 반환하는 미들웨어
 
 app.use(betweenHome);
 app.get("/", betweenHome, handleHome);
@@ -48,5 +49,8 @@ export는 변수별로 export시킨다.
 
  res.render("템플릿","템플릿에 넘길 정보")
 
- Async: JS야, 어떤 부분은 꼭 기다렸다가 실행해야 해.
+ async/await: JS야, 어떤 부분은 꼭 기다렸다가 실행해야 해.
+
+ enctype: form tag에서 post방식의 method에서 데이터 인코딩하는 방식을 명시
+ enctype="multipart/form-data": 파일이나 이미지 업로드시 사용할 것.
  ```
