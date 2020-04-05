@@ -7,12 +7,17 @@ npm init // package.json 파일 생성
 npm install express // express 설치
 
 // babelrc는 최신버전(ES6)의 javascript를 구 브라우저에서 인식할 수 있도록 옛날 버전으로 바꿔주는 역할.
+
+npm은 패키지를 설치하는 것이다.
 npm install @babel/node // babel 설치
 npm install @babel/preset-env // env 설치 (최신이지만 그렇게 실험적이진 않음)
 npm install nodemon -D // js의 수정 감지 nodemon과 같은 프로젝트에 영향은 주지 않지만 개발자에게 필요한 모듈 설치 시 -D
 npm install pug // HTML을 멋지게 보이게 만들어줌
 npm install dotenv // 보안용 내 URL에서 user의 데이터를 숨길 때 사용
 npm install multer // file을 업로드하면 url을 반환하는 미들웨어
+npm install eslint -g // global로 설치함
+eslint --init  //
+npm install eslint-config-prettier // prettier는 지적하지 않아
 
 app.use(betweenHome);
 app.get("/", betweenHome, handleHome);

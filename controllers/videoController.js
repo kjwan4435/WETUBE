@@ -1,21 +1,27 @@
 import routes from "../routes";
 import Video from "../models/Video";
 import Comment from "../models/Comment";
-
 // global
 export const home = async (req, res) => {
     try {
         const videos = await Video.find({}).sort({ _id: -1 });
         res.render("home", { pageTitle: "home", videos });
     } catch (error) {
-        console.log(error);
         res.render("home", { pageTitle: "home", videos: [] });
     }
 };
-export const search = (req, res) => {
+export const search = async (req, res) => {
     const {
         query: { term: searchingBy },
     } = req;
+    let videos = [];
+    try {
+        videos = await Video.find({
+            title: { $regex: searchingBy, $options: "i" },
+        }); // i: insensitve (대소문자 구별안하겠다)
+    } catch (error) {
+        console.log(error);
+    }
     res.render("search", { pageTitle: "search", searchingBy, videos });
 };
 
@@ -35,7 +41,7 @@ export const postUpload = async (req, res) => {
     res.redirect(routes.videoDetail(newVideo.id));
 };
 
-//get과 post를 같이 적는 이유는, get은 순수 html페이지를 로딩하기 위함. post는 포스팅을 하기 위함이다.
+// get과 post를 같이 적는 이유는, get은 순수 html페이지를 로딩하기 위함. post는 포스팅을 하기 위함이다.
 export const getEditVideo = async (req, res) => {
     const {
         params: { id },
@@ -44,7 +50,6 @@ export const getEditVideo = async (req, res) => {
         const video = await Video.findById(id);
         res.render("editVideo", { pageTitle: "editVideo", video });
     } catch (error) {
-        console.log(error);
         res.redirect(routes.home);
     }
 };
@@ -54,13 +59,12 @@ export const postEditVideo = async (req, res) => {
         body: { description, title },
     } = req;
     try {
-        const video = await Video.findOneAndUpdate(
+        await Video.findOneAndUpdate(
             { _id: id }, // object condition
             { title, description } // object data
         );
         res.redirect(routes.videoDetail(id));
     } catch (error) {
-        console.log(error);
         res.redirect(routes.home);
     }
 };
@@ -73,7 +77,6 @@ export const videoDetail = async (req, res) => {
         const video = await Video.findById(id);
         res.render("videoDetail", { pageTitle: "videoDetail", video });
     } catch (error) {
-        console.log(error);
         res.redirect(routes.home);
     }
 };

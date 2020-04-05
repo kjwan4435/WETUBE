@@ -20,11 +20,11 @@ const VideoSchema = new mongoose.Schema({
     },
     comment: [
         {
-            type: mongoose.Schema.Types.ObjectId, //comment의 ID가 저장되는 형태
+            type: mongoose.Schema.Types.ObjectId, // comment의 ID가 저장되는 형태
             ref: "Comment",
         },
     ],
 });
 
-const model = mongoose.model("Video", VideoSchema); //(modelname, SCHEMA)
+const model = mongoose.model("Video", VideoSchema); // (modelname, SCHEMA)
 export default model;

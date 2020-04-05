@@ -7,7 +7,7 @@ const SEARCH = "/search";
 
 // users
 const USERS = "/users";
-const USER_DETAIL = "/:id"; //:변수는 express가 변수로 인식함
+const USER_DETAIL = "/:id"; // :변수는 express가 변수로 인식함
 const EDIT_PROFILE = "/edit-profile";
 const CHANGE_PASSWORD = "/change-password";
 
