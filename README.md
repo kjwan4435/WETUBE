@@ -9,6 +9,7 @@ npm install express // express 설치
 // babelrc는 최신버전(ES6)의 javascript를 구 브라우저에서 인식할 수 있도록 옛날 버전으로 바꿔주는 역할.
 
 npm은 패키지를 설치하는 것이다.
+npm install @babel/cli
 npm install @babel/node // babel 설치
 npm install @babel/preset-env // env 설치 (최신이지만 그렇게 실험적이진 않음)
 npm install nodemon -D // js의 수정 감지 nodemon과 같은 프로젝트에 영향은 주지 않지만 개발자에게 필요한 모듈 설치 시 -D
@@ -79,4 +80,15 @@ export는 변수별로 export시킨다.
  req.params와 query의 차이
 req.params는 예약된 값이라고 했다. routing을 보면 id와 name이 예약되어 있음을 알고있다. 즉 서버에서 id라는 변수로 어떤 값이 들어올 것을 알고, name이라는 변수에 어떤 값이 들어올 것임을 알고 대기하고 있다. req.params는 url을 분석하여 id와 name자리에 있는 값을 낚아챈다.
 req.query는 url에서 ?뒤에 입력되는 query문을 req.query로 받아오는 것이다.
+
+===========DEPLOYMENT==============
+
+ brew install heroku/brew/heroku
+ heroku login
+ heroku create
+ git push heroku master
+
+ heroku logs --tail // error보기
+
+
 ```

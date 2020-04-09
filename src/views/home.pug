@@ -1,0 +1,12 @@
+extends layouts/main
+include mixins/videoBlock
+
+block content
+    .home-video
+        each item in videos
+            +videoBlock({
+                id: item.id,
+                videoFile: item.fileUrl,
+                title: item.title,
+                views: item.views
+            })
