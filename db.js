@@ -7,6 +7,7 @@ mongoose.connect(process.env.MONGO_URL, {
     // 항상 mongodb를 실행할 때마다 줄 configuration. new version에 맞춰서 설정해놓은거임 신경 ㄴㄴ
     useNewUrlParser: true,
     useFindAndModify: false,
+    useUnifiedTopology: true,
 });
 
 const db = mongoose.connection;

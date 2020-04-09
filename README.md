@@ -18,6 +18,23 @@ npm install multer // file을 업로드하면 url을 반환하는 미들웨어
 npm install eslint -g // global로 설치함
 eslint --init  //
 npm install eslint-config-prettier // prettier는 지적하지 않아
+npm add eslint-config-prettier
+
+npm install webpack webpack-cli // 웹팩을 코드와 터미널에 설치
+npm install extract-text-webpack-plugin@next  // 웹팩의 beta버전 설치
+// 1. SCSS를 CSS로 바꾼다.
+// 2. 특정 플러그인들을 css에 대해서 실행시켜준다
+// 3. CSS를 가져와준다.
+// webpack은 config파일에서 bottom에서 top으로 실행한다.
+npm install sass-loader postcss-loader css-loader
+npm install autoprefixer
+npm install node-sass
+npm install babel-loader
+npm install @babel/polyfill  //  js와 브라우저 간의 갭을 메꿔줌
+npm install passport-local-mongoose // 유저 인증 / 패스워드 설정 및 확인을 도와준다
+npm install passport passport-local // 로컬 로그인
+npm install express-session  // 세션에 유저 정보 저장
+npm i connect-mongo // 세션 정보를 데이터베이스에 저장하기
 
 app.use(betweenHome);
 app.get("/", betweenHome, handleHome);
